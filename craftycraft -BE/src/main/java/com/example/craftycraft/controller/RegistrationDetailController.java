@@ -1,5 +1,6 @@
 package com.example.craftycraft.controller;
 
+import com.example.craftycraft.entity.UserDetail;
 import com.example.craftycraft.model.LogInPageRequest;
 import com.example.craftycraft.model.PasswordResetRequest;
 import com.example.craftycraft.model.SignUpPageRequest;
@@ -11,15 +12,26 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/RegistrationDetail")
 public class RegistrationDetailController {
+
     @Autowired
     private RegistrationDetailService registrationDetailService;
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
+
+    @PostMapping("/generateOtp")
+    public ResponseEntity<String> generateOtp(@RequestBody SignUpPageRequest signUpPageRequest){
+         return registrationDetailService.generateOtp(signUpPageRequest);
+    }
+
+    @PostMapping("/verifyOtp")
+    public ResponseEntity<String> verifyOtp(@RequestParam String mailId,@RequestParam String otpGenerated){
+        return registrationDetailService.verifyOtp(mailId,otpGenerated);
+    }
+
     @PostMapping("/SignUp")
     public ResponseEntity<String> signup(@RequestBody SignUpPageRequest signUpPageRequest ){
         return registrationDetailService.signup(signUpPageRequest);
     }
-
 
     @PostMapping("/Login")
     public ResponseEntity<String> login(@RequestBody LogInPageRequest logInPageRequest){
@@ -30,4 +42,5 @@ public class RegistrationDetailController {
     public ResponseEntity<String> passwordReset(@RequestBody PasswordResetRequest passwordResetRequest ){
         return registrationDetailService.passwordReset(passwordResetRequest);
     }
+
 }

@@ -13,7 +13,7 @@ import java.util.Date;
 @Component
 public class JWToken {
 //    private final Key secretKey= Keys.secretKeyFor(SignatureAlgorithm.HS256);
-      private  String secretKey = "yourSecretKey";
+      private  String secretKey = "mfnjkgerhsdfsnddhfndsrbuddjsjbfiuerjfsjbfsfdsvdvfvfdvfber";
     public  String generatingToken(String mailId, String fullName){
         return Jwts.builder()
                 .setSubject(mailId)

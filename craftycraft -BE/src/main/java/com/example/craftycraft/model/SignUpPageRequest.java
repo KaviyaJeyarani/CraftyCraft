@@ -11,7 +11,7 @@ public class SignUpPageRequest {
     private String gender;
     private Long age;
     private String location;
-    private Long phoneNumber;
+    private String phoneNumber;
     private String password;
     private String confirmPassword;
 }

@@ -8,6 +8,4 @@ import java.time.LocalDateTime;
 public class LogInPageRequest {
     private String mailId;
     private String password;
-    private LocalDateTime loggedinTime;
-    private LocalDateTime updatedLoggedinTime;
 }

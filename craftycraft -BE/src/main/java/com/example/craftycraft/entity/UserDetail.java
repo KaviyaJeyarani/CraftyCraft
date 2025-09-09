@@ -23,7 +23,11 @@ public class UserDetail {
     private String gender;
     private Long age;
     private String location;
-    private Long phoneNumber;
+    private String phoneNumber;
     private LocalDateTime loggedinTime;
     private LocalDateTime updatedLoggedinTime;
+    private boolean verificationStatus=false;
+    private String otpGenerated;
+    private LocalDateTime otpValidityTime;
+    private String token;
 }
